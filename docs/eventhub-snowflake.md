@@ -172,7 +172,7 @@ Configuration:
    ```
    Optimal Settings:
    - Batch Size: 1000
-   - Number of Threads: 4
+   - Number of Threads: 4[Usually same as partition count]
    - Memory Limit: 512 MB
    ```
 
