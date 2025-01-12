@@ -22,6 +22,13 @@
 - **SLA Requirements**: [If any]
 - **Data Retention Requirements**: [Specify retention periods. For example, eventhub max retention of data is 24hrs in basic tier]
 
+## Security Notes
+- All credentials should be stored in a secure credential store
+- Connection strings should be encrypted
+- Access keys should be rotated regularly
+- Use managed identities where possible
+- Enable audit logging for all components
+
 ## Prerequisites
 1. **Access Requirements**:
     - Azure Event Hub access
@@ -172,7 +179,7 @@ Configuration:
    ```
    Optimal Settings:
    - Batch Size: 1000
-   - Number of Threads: 4[Usually same as partition count]
+   - Number of Threads: [Usually same as partition count]
    - Memory Limit: 512 MB
    ```
 
