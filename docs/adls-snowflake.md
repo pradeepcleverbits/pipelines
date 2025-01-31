@@ -82,29 +82,29 @@ Configuration:
 ```
 
 ## Pipeline Parameters
-| Parameter Name | Description | Example Value | Notes |
-|---------------|-------------|---------------|-------|
-| P_AZURE_ACCOUNT_FQDN | ADLS account FQDN | *.blob.core.windows.net | - |
-| P_DATA_FILE_PATTERN | File pattern to process | sdc* | Supports wildcards |
-| P_DATA_PATH_IN_CONTAINER | Data path within container | data/input | - |
-| P_NUMBER_OF_THREADS_TO_READ_FROM_ADLS | Number of reader threads | 1 | Tune based on performance |
-| P_STORAGE_CONTAINER | ADLS container name | input-data | - |
-| P_SOURCE_DATA_FORMAT | Source data format | JSON | Supported: JSON, CSV, AVRO |
-| P_SNOWFLAKE_ACCOUNT | Snowflake account | [SECURED] | Store in credential store |
-| P_SNOWFLAKE_ORGANIZATION | Snowflake org | [SECURED] | Store in credential store |
-| P_SNOWFLAKE_TARGET_DB | Target database | PROD_DB | - |
-| P_SNOWFLAKE_TARGET_SCHEMA | Target schema | PROD_SCHEMA | - |
-| P_SNOWFLAKE_TARGET_TABLE | Target table | DESTINATION_TABLE | - |
-| P_SNOWFLAKE_TARGET_WAREHOUSE | Compute warehouse | COMPUTE_WH | - |
-| P_SNOWFLAKE_STAGE_NAME | Internal stage name | INTERNAL_STAGE | - |
-| P_SNOWFLAKE_STAGE_DB | Stage database | STAGE_DB | - |
-| P_SNOWFLAKE_STAGE_SCHEMA | Stage schema | STAGE_SCHEMA | - |
-| P_EVENTHUB_NAMESPACE | Error handling namespace | dev-eventhub | For error records |
-| P_ERROR_RECORD_EVENTHUB | Error records topic | error-records | - |
-| P_SNOWFLAKE_USER | Snowflake username | [SECURED] | Store in credential store |
-| P_SNOWFLAKE_PASSWORD | Snowflake password | [SECURED] | Store in credential store |
-| P_STORAGE_ACCOUNT_KEY | ADLS account key | [SECURED] | Store in credential store |
-| P_STORAGE_ACCOUNT_CONNECTION_STRING | ADLS connection string | [SECURED] | Store in credential store |
+| Parameter Name | Description | Example Value | Notes                                                                                                               |
+|---------------|-------------|---------------|---------------------------------------------------------------------------------------------------------------------|
+| P_AZURE_ACCOUNT_FQDN | ADLS account FQDN | *.blob.core.windows.net | -                                                                                                                   |
+| P_DATA_FILE_PATTERN | File pattern to process | sdc* | Supports wildcards                                                                                                  |
+| P_DATA_PATH_IN_CONTAINER | Data path within container | data/input | This changes according to the P_SOURCE_DATA_FORMAT.<br/> For example, for DELIMITED use path like csv-for-snowflake |
+| P_NUMBER_OF_THREADS_TO_READ_FROM_ADLS | Number of reader threads | 1 | Tune based on performance                                                                                           |
+| P_STORAGE_CONTAINER | ADLS container name | input-data | -                                                                                                                   |
+| P_SOURCE_DATA_FORMAT | Source data format | JSON | Supported: JSON, CSV, AVRO, PARQUET                                                                                 |
+| P_SNOWFLAKE_ACCOUNT | Snowflake account | [SECURED] | Store in credential store                                                                                           |
+| P_SNOWFLAKE_ORGANIZATION | Snowflake org | [SECURED] | Store in credential store                                                                                           |
+| P_SNOWFLAKE_TARGET_DB | Target database | PROD_DB | -                                                                                                                   |
+| P_SNOWFLAKE_TARGET_SCHEMA | Target schema | PROD_SCHEMA | -                                                                                                                   |
+| P_SNOWFLAKE_TARGET_TABLE | Target table | DESTINATION_TABLE | -                                                                                                                   |
+| P_SNOWFLAKE_TARGET_WAREHOUSE | Compute warehouse | COMPUTE_WH | -                                                                                                                   |
+| P_SNOWFLAKE_STAGE_NAME | Internal stage name | INTERNAL_STAGE | -                                                                                                                   |
+| P_SNOWFLAKE_STAGE_DB | Stage database | STAGE_DB | -                                                                                                                   |
+| P_SNOWFLAKE_STAGE_SCHEMA | Stage schema | STAGE_SCHEMA | -                                                                                                                   |
+| P_EVENTHUB_NAMESPACE | Error handling namespace | dev-eventhub | For error records                                                                                                   |
+| P_ERROR_RECORD_EVENTHUB | Error records topic | error-records | -                                                                                                                   |
+| P_SNOWFLAKE_USER | Snowflake username | [SECURED] | Store in credential store                                                                                           |
+| P_SNOWFLAKE_PASSWORD | Snowflake password | [SECURED] | Store in credential store                                                                                           |
+| P_STORAGE_ACCOUNT_KEY | ADLS account key | [SECURED] | Store in credential store                                                                                           |
+| P_STORAGE_ACCOUNT_CONNECTION_STRING | ADLS connection string | [SECURED] | Store in credential store                                                                                           |
 
 ## Error Handling
 1. **Pipeline Level**:
